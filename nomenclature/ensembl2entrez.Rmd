@@ -1,0 +1,24 @@
+---
+title: "ensembl2entrez"
+output: html_document
+runtime: shiny
+---
+
+```{r, echo=FALSE}
+library(shiny)
+```
+
+This notebook takes any table with **Ensembl** gene IDs and annotates it with a column containing **Entrez** IDs
+
+```{r, echo=FALSE}
+textInput("inpath", "Path to input TSV with")
+textInput("outpath", "Path to output TSV")
+actionButton("start", "Annotate Table")
+```
+
+```{r, echo=FALSE}
+observeEvent(input$start, {
+  print(input$inpath)
+  print(input$outpath)
+})
+```
